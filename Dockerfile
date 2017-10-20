@@ -38,8 +38,6 @@ RUN git clone https://github.com/php-pm/php-pm.git \
     && cd php-pm \
 	&& composer install \
 	&& ln -s `pwd`/bin/ppm /usr/local/bin/ppm \
-	&& ppm --help
-
-RUN ls -la /usr/local/bin
+	&& composer require php-pm/httpkernel-adapter:dev-master
 
 CMD ["php","/usr/local/bin/ppm","start"]

@@ -12,5 +12,5 @@
     "concurrent-requests": false,
     "socket-path": ".ppm\/run\/",
     "pidfile": ".ppm\/ppm.pid",
-    "cgi-path": "\/usr\/local\/Cellar\/php71\/7.1.10_21\/bin\/php-cgi"
+    "cgi-path": "/usr/bin/php-cgi7.1"
 }

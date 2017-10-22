@@ -5,7 +5,7 @@ RUN apt-get update \
 	&& wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg \
 	&& echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list \
 	&& apt-get update \
-	&& apt-get -y install git zlib1g-dev php7.1 php7.1-cgi php7.1-zip php7.1-curl php7.1-opcache php7.1-xml php7.1-mbstring php7.1-imagick php7.1-gd
+	&& apt-get -y install readline git zlib1g-dev php7.1 php7.1-cgi php7.1-zip php7.1-curl php7.1-opcache php7.1-xml php7.1-mbstring php7.1-imagick php7.1-gd
 
 COPY docker/app/php.ini /etc/php/7.1/cgi/conf.d/99-phppm.ini
 COPY docker/app/php.ini /etc/php/7.1/cli/conf.d/99-phppm.ini

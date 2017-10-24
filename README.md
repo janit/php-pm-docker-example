@@ -6,6 +6,8 @@ The aim is to enable running compatible PHP apps with high performance and no ne
 for a separate web server (like Nginx or Apache). This would be inline with running
 Node.js or Golang apps in containers.
 
+More information in this article: [Running Symfony without a web server on Docker using PHP-PM](https://symfony.fi/entry/running-symfony-without-a-web-server-on-docker-using-php-pm)
+
 ## Installation
 
 Make sure you've got Docker installed and working as expected.

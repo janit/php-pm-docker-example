@@ -22,7 +22,7 @@ RUN set -xe \
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
-RUN composer global require "hirak/prestissimo:^0.3" --prefer-dist --no-progress --no-suggest --optimize-autoloader --classmap-authoritative \
+RUN composer global require "hirak/prestissimo" --prefer-dist --no-progress --no-suggest --optimize-autoloader --classmap-authoritative \
 	&& composer clear-cache
 
 # copy files to main dir
@@ -36,11 +36,8 @@ RUN mkdir -p var/cache var/logs var/sessions \
 	&& chown -R www-data var
 
 # install php-pm to directory
-RUN git clone https://github.com/php-pm/php-pm.git \
-    && cd php-pm \
-	&& composer install \
-	&& ln -s `pwd`/bin/ppm /usr/local/bin/ppm \
-	&& composer require php-pm/httpkernel-adapter:dev-master
+RUN composer require php-pm/php-pm \
+	&& composer require php-pm/httpkernel-adapter
 
 # run ppm, note that it will use ppm.json settings by default
-CMD ["php","/usr/local/bin/ppm","start"]
+CMD ["php","vendor/bin/ppm","start"]
